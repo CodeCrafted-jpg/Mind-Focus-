@@ -1,0 +1,128 @@
+/* Overall page layout */
+.group-details-page {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #F0FDF4; /* emerald-50 */
+    color: #1F2937; /* gray-800 */
+    min-height: 100vh;
+    padding: 30px;
+    margin: 0;
+}
+
+/* Top navbar */
+.top-navbar {
+    background-color: #10B981; /* emerald-500 */
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 2px solid #059669; /* emerald-600 */
+}
+
+/* Group header and chart side by side */
+.group-header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 2rem;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+/* Group info */
+.group-header {
+    flex: 1;
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.group-header h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.group-header p {
+    margin: 0.3rem 0;
+    font-size: 0.95rem;
+}
+
+/* Leave button */
+.btn-red {
+    background-color: #DC2626; /* red-600 */
+    color: white;
+    padding: 0.5rem 1.25rem;
+    border: none;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-red:hover {
+    background-color: #B91C1C; /* red-700 */
+}
+
+/* Pie chart section */
+.group-chart {
+    flex: 1;
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    min-width: 300px;
+}
+.group-chart h2{
+color: #DC2626;
+font-size:20px;
+font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+/* Three-column layout */
+.group-content-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+/* Panels */
+.panel {
+    background-color: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.panel h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: #059669;
+}
+
+/* Feed list */
+.feed-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1rem;
+}
+
+.feed-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #E5E7EB; /* gray-200 */
+    font-size: 0.95rem;
+}
+
+/* Member list */
+.panel ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.panel li {
+    padding: 0.4rem 0;
+    font-size: 0.95rem;
+    border-bottom: 1px solid #E5E7EB;
+}

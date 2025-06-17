@@ -1,0 +1,282 @@
+
+.focus-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  padding: 20px;
+  max-width: 900px; 
+  margin: 0 auto;
+  min-height: 100vh; /* Ensure it takes full viewport height */
+  background-color: #f4f7f6; /* A light, soft background */
+  font-family: Arial, sans-serif; /* Use your theme's font */
+}
+
+.focus-page-title {
+  color: #333; /* Darker text for titles */
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+}
+
+/* Card Styling (for Session Controls, Site Blocker, AI Assistant) */
+.session-controls-card,
+.site-blocker-card,
+.ai-assistant-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Soft shadow */
+  padding: 30px;
+  margin-bottom: 25px; /* Space between cards */
+  width: 100%;
+  max-width: 600px; /* Max width for cards for better layout */
+  box-sizing: border-box; /* Include padding in width */
+}
+
+/* Session Controls */
+.session-controls-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.session-buttons {
+  display: flex;
+  gap: 15px;
+  width: 100%;
+  justify-content: center; /* Center buttons */
+}
+
+.session-buttons button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  flex: 1; /* Make buttons take equal width */
+  max-width: 180px; /* Limit button width */
+}
+
+.session-buttons button:first-child {
+  background-color: #28a745; /* Green for Start */
+  color: white;
+}
+
+.session-buttons button:first-child:hover:not(:disabled) {
+  background-color: #218838;
+  transform: translateY(-2px);
+}
+
+.session-buttons button:last-child {
+  background-color: #dc3545; /* Red for End */
+  color: white;
+}
+
+.session-buttons button:last-child:hover:not(:disabled) {
+  background-color: #c82333;
+  transform: translateY(-2px);
+}
+
+.session-buttons button:disabled {
+  background-color: #e0e0e0;
+  color: #a0a0a0;
+  cursor: not-allowed;
+}
+
+/* Site Blocker */
+.site-blocker-card {
+  text-align: center; /* Center the heading */
+}
+
+.Bloker { /* This is your existing class name */
+  color: #444;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+.block-input-area {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.block-input-area .input { /* This is your existing class name */
+  flex-grow: 1;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.block-input-area button {
+  padding: 12px 20px;
+  background-color: #007bff; /* Blue for Block */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.block-input-area button:hover {
+  background-color: #0056b3;
+}
+
+.blocked-sites-list > div {
+  background: #F0FDF4; /* Your existing green color */
+  padding: 12px 15px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  color: #333;
+  border: 1px solid #e6ffe6; /* Slightly darker green border */
+}
+
+.blocked-sites-list > div span {
+    word-break: break-all; /* Ensure long URLs break */
+    margin-right: 10px;
+}
+
+.blocked-sites-list > div button {
+  background: none;
+  border: none;
+  color: red; /* Your existing red color */
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: opacity 0.3s ease;
+}
+
+.blocked-sites-list > div button:hover {
+  opacity: 0.7;
+}
+
+/* AI Assistant */
+.ai-assistant-card {
+  text-align: center;
+  border: 2px solid #6c757d; /* A neutral border for distinction */
+  background-color: #fdfdfd; /* Slightly different background */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.assistant-title { /* Your existing class name */
+  color: #444;
+  margin-bottom: 10px;
+  font-size: 1.8rem;
+}
+
+.assistant-desc { /* Your existing class name */
+  color: #666;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.assistant-button { /* Your existing class name */
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #28a745; /* Grey for Assistant button */
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.assistant-button:hover {
+  background-color:#2e9f49;
+  transform: translateY(-2px);
+}
+
+/* Unauthenticated State */
+.focus-page-unauthenticated {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  color: #555;
+  font-family: Arial, sans-serif;
+}
+
+.focus-page-unauthenticated h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.focus-page-unauthenticated p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.focus-page-unauthenticated strong {
+  color: #007bff; /* Highlight login text */
+}
+
+/* SessionTimer component styling (assuming it has its own CSS but just in case) */
+/* This is a placeholder, adjust based on your actual SessionTimer component's structure */
+.session-timer-display {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .focus-page-container {
+    padding: 15px;
+  }
+
+  .focus-page-title {
+    font-size: 2rem;
+    margin-bottom: 25px;
+  }
+
+  .session-buttons {
+    flex-direction: column; /* Stack buttons vertically on small screens */
+  }
+
+  .session-buttons button {
+    max-width: none; /* Allow buttons to take full width */
+  }
+
+  .session-controls-card,
+  .site-blocker-card,
+  .ai-assistant-card {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .site-blocker-card .input {
+    font-size: 0.9rem;
+  }
+
+  .blocked-sites-list > div {
+    flex-direction: column; /* Stack site URL and unblock button */
+    align-items: flex-start;
+  }
+  .blocked-sites-list > div button {
+      margin-top: 5px;
+  }
+}
+.mode-toggle button {
+  background-color: #10B981;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: medium;
+}
+
+.focus-mode-label {
+  font-weight: bold;
+  color: #059669;
+  margin-bottom: 0.5rem;
+}

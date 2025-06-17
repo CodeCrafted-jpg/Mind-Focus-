@@ -1,0 +1,202 @@
+/* Container layout */
+.groups-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+  font-family: Arial, sans-serif;
+}
+
+.groups-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.groups-header h1 {
+  font-size: 28px;
+  color: #1f2937;
+}
+
+.btn-orange {
+  background-color: #f97316;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-orange:hover {
+  background-color: #ea580c;
+}
+
+.full-width {
+  width: 100%;
+}
+
+/* Form styling */
+.create-group-form {
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 32px;
+}
+
+.create-group-form h2 {
+  margin-bottom: 16px;
+  font-size: 20px;
+  color: #111827;
+}
+
+.form-group {
+  margin-bottom: 16px;
+  
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #374151;
+ 
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+/* Group Cards */
+.group-list {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.group-card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+}
+
+.group-card h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #111827;
+}
+.group-link {
+  text-decoration: none;
+  color: #10B981;
+}
+
+.group-card .description {
+  margin-bottom: 12px;
+  color: #4b5563;
+}
+
+.group-meta p {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 4px 0;
+}
+
+/* Empty state */
+.empty-state {
+  text-align: center;
+  background-color: #f9fafb;
+  padding: 40px;
+  border-radius: 8px;
+  border: 1px dashed #d1d5db;
+}
+
+.empty-state p {
+  color: #6b7280;
+  font-size: 16px;
+}
+
+.text-link {
+  background: none;
+  border: none;
+  color: #f97316;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+/* Loading container */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+.other-groups-section {
+  margin-top: 2rem;
+  border-top: 1px solid #ddd;
+  padding-top: 1rem;
+}
+
+.btn-green {
+  background-color: #10B981;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.joinable-group {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+.other-groups-section {
+  margin-top: 2rem;
+  border-top: 1px solid #ddd;
+  padding-top: 1rem;
+}
+
+.btn-green {
+  background-color: #10B981;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.joinable-group {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.search-bar {
+  margin: 1rem 0;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}

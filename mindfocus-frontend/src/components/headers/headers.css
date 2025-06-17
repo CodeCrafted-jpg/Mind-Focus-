@@ -1,0 +1,35 @@
+.header-container {
+  background-color: #F0FDF4; /* emerald-50 */
+  color: #1F2937; /* gray-800 */
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.header-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #10B981; /* emerald-500 */
+  margin-bottom: 1rem;
+}
+
+.header-subtitle {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+  line-height: 1.6;
+}
+
+.header-cta {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #059669; /* emerald-600 */
+  color: white;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.header-cta:hover {
+  background-color: #047857; /* emerald-700 */
+}

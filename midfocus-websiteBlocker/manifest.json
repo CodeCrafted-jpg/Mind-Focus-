@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "MidFocus Site Blocker",
+  "version": "1.0",
+  "description": "Block distracting sites during focus mode.",
+  "permissions": [
+    "storage",
+    "declarativeNetRequest",
+    "declarativeNetRequestWithHostAccess"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+
+  "externally_connectable": {
+    "matches": ["http://localhost:5173/*"] 
+  },
+ 
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "MidFocus"
+  }
+}

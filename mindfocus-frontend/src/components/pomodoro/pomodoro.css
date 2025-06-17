@@ -1,0 +1,28 @@
+.pomodoro-container {
+  background-color: #F0FDF4;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(16, 185, 129, 0.2);
+  text-align: center;
+  color: #1F2937;
+}
+
+.pomodoro-timer {
+  font-size: 3rem;
+  margin: 1rem 0;
+}
+
+.pomodoro-controls button {
+  margin: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #10B981;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.pomodoro-controls button:hover {
+  background-color: #059669;
+}

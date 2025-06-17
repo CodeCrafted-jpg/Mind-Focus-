@@ -1,0 +1,15 @@
+.timer-box {
+  padding: 1rem;
+  border-radius: 12px;
+  background: #F0FDF4;
+  color: #1F2937;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.digital-timer {
+  font-size: 2rem;
+  color: #059669;
+  margin-top: 0.5rem;
+}
