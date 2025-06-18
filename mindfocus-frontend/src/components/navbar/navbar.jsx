@@ -51,17 +51,24 @@ const Navbar = () => {
         </div>
 
         <ul className={`navbar-links ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
-           
+
 
           <li><a href="/" onClick={closeMenu}>Home</a></li>
           <li><a href="#" onClick={closeMenu}>About</a></li>
           <li><a href="#features" onClick={closeMenu}>Features</a></li>
           <li><a href="#" onClick={closeMenu}>Join</a></li>
-         {user  &&(
+          {user && (
             <>
               <li><Link to="/focus" onClick={closeMenu}>Focus</Link></li>
               <li><Link to="/groups" onClick={closeMenu}>Groups</Link></li>
-             
+              <li> <Link
+                to={"/ai-assistant"}
+                target="_blank"
+                rel="noopener noreferrer"
+
+              >
+                AI Assistant
+              </Link></li>
             </>
           )}
         </ul>

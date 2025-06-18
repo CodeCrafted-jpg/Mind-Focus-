@@ -112,9 +112,13 @@ const Chat = () => {
         </div>
       </aside>
 
+      {isSessionsOpen && (
+        <div className="overlay" onClick={() => setIsSessionsOpen(false)}></div>
+      )}
+
       <main className="chat-main">
         <header className="chat-header">
-          <button className="back-arrow" onClick={() => window.close()}>←</button>
+          <button className="hamburger-menu" onClick={() => setIsSessionsOpen(true)}>☰</button>
           <h3 className="chat-heading">
             Improve your skills with suggestions, guides, or hacks 💡
           </h3>
