@@ -84,10 +84,12 @@ const Chat = () => {
     <div className="app-layout">
       <aside className={`sidebar ${isSessionsOpen ? 'open' : ''}`}>
         <div className="sidebar-header">
+           <button className="back-arrow" onClick={() => window.close()}>←</button>
           <h2>Your Chats</h2>
           <button onClick={createNewChat} className="new-chat-button">
             New Chat
           </button>
+         
         </div>
         <div className="session-list-container">
           <button onClick={loadSessions} className="load-sessions-toggle">
@@ -122,6 +124,7 @@ const Chat = () => {
           <h3 className="chat-heading">
             Improve your skills with suggestions, guides, or hacks 💡
           </h3>
+          
         </header>
 
         <div className="messages-container">
