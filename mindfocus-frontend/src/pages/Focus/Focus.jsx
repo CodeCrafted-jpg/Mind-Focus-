@@ -1,5 +1,5 @@
 import './focus.css';
-import React, { useState, useEffect, useCallback } from 'react'; // Import useCallback
+import React, { useState, useEffect, useCallback } from 'react';
 import { studySession } from '../../service/studySession';
 import { blockSiteService } from '../../service/blockSitesService';
 import SessionTimer from '../../components/sessionTimer/SessionTimer';
@@ -10,38 +10,34 @@ import { Link } from 'react-router-dom';
 const FocusPage = ({ setIsFocusRunning }) => {
   const [sessionId, setSessionId] = useState(null);
   const [isRunning, setIsRunning] = useState(false);
-  const [user, setUser] = useState(authService.getUser()); // Initialize user directly
+  const [user, setUser] = useState(authService.getUser());
   const [siteInput, setSiteInput] = useState('');
   const [blockedSites, setBlockedSites] = useState([]);
   const [isPomodoroMode, setIsPomodoroMode] = useState(false);
   const [pomodoroConfig, setPomodoroConfig] = useState(null);
-  const [readyToRenderPomodoro, setReadyToRenderPomodoro] = useState(false); 
+  const [readyToRenderPomodoro, setReadyToRenderPomodoro] = useState(false);
 
-  // Memoize fetchBlockedSites to prevent infinite loop
   const fetchBlockedSites = useCallback(async () => {
-    if (!user) { // Only fetch if a user is logged in
-      setBlockedSites([]); // Clear sites if no user
+    if (!user) {
+      setBlockedSites([]);
       return;
     }
     try {
       const res = await blockSiteService.getSites();
       if (res.success) {
         setBlockedSites(res.allSites);
-        await authService.syncBlockedSites(); 
-        console.log("✅ Extension sync requested after fetching blocked sites.");
+        await authService.syncBlockedSites();
       } else {
         console.error('Error fetching sites from backend:', res.message);
       }
     } catch (err) {
       console.error('Error fetching sites:', err);
     }
-  }, [user]); // Dependency on user to re-fetch when user changes
+  }, [user]);
 
-  // useEffect to call fetchBlockedSites only when user changes or on initial mount
   useEffect(() => {
     fetchBlockedSites();
-  }, [fetchBlockedSites]); // Dependency on fetchBlockedSites (which is memoized with useCallback)
-
+  }, [fetchBlockedSites]);
 
   const handleBlockSite = async () => {
     if (!siteInput.trim()) return;
@@ -49,7 +45,7 @@ const FocusPage = ({ setIsFocusRunning }) => {
       const res = await blockSiteService.addSite(siteInput);
       if (res.success) {
         setSiteInput('');
-        await fetchBlockedSites(); // Await to ensure re-fetch and sync completes
+        await fetchBlockedSites();
       } else {
         console.error(res.message || 'Failed to block site');
         alert(res.message || 'Failed to block site');
@@ -64,7 +60,7 @@ const FocusPage = ({ setIsFocusRunning }) => {
     try {
       const res = await blockSiteService.removeSite(id);
       if (res.success) {
-        await fetchBlockedSites(); // Await to ensure re-fetch and sync completes
+        await fetchBlockedSites();
       } else {
         console.error('Error unblocking site from backend:', res.message);
       }
@@ -81,15 +77,14 @@ const FocusPage = ({ setIsFocusRunning }) => {
       }
 
       let config = { isPomodoro: false };
-      setReadyToRenderPomodoro(false); 
 
       if (isPomodoroMode) {
-        const focusTime = parseInt(prompt("Focus time in minutes:", 25)); 
+        const focusTime = parseInt(prompt("Focus time in minutes:", 25));
         const shortBreak = parseInt(prompt("Short break in minutes:", 5));
         const longBreak = parseInt(prompt("Long break in minutes:", 15));
         const totalDuration = parseInt(prompt("Total Pomodoro session duration (in minutes):", 60));
 
-        if (isNaN(focusTime) || isNaN(shortBreak) || isNaN(longBreak) || isNaN(totalDuration) || 
+        if (isNaN(focusTime) || isNaN(shortBreak) || isNaN(longBreak) || isNaN(totalDuration) ||
             focusTime <= 0 || shortBreak <= 0 || longBreak <= 0 || totalDuration <= 0) {
           alert("All values must be valid positive numbers.");
           return;
@@ -99,15 +94,13 @@ const FocusPage = ({ setIsFocusRunning }) => {
           sessionLength: focusTime,
           shortBreak,
           longBreak,
-          totalRounds: Math.floor(totalDuration / (focusTime + shortBreak)),
+          totalRounds: 4,
         };
 
         setPomodoroConfig(newConfig);
         config = { isPomodoro: true, customPomodoroConfig: newConfig };
-
-        setTimeout(() => {
-          setReadyToRenderPomodoro(true);
-        }, 100); 
+        
+        setReadyToRenderPomodoro(true);
       }
 
       const res = await studySession.startSession(config);
@@ -116,6 +109,7 @@ const FocusPage = ({ setIsFocusRunning }) => {
       setIsFocusRunning(true);
     } catch (err) {
       console.error(err);
+      alert(err?.response?.data?.message || 'Failed to start session');
     }
   };
 
@@ -166,7 +160,7 @@ const FocusPage = ({ setIsFocusRunning }) => {
         {isPomodoroMode ? (
           readyToRenderPomodoro && pomodoroConfig ? (
             <PomodoroTimer
-              key={JSON.stringify(pomodoroConfig)} 
+              key={JSON.stringify(pomodoroConfig)}
               sessionLength={pomodoroConfig.sessionLength}
               shortBreak={pomodoroConfig.shortBreak}
               longBreak={pomodoroConfig.longBreak}

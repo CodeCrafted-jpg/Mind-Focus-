@@ -85,7 +85,7 @@ function GroupDetailsPage() {
             {/* Three Column Layout */}
             <div className="group-content-layout">
                 {/* Feed Panel */}
-                <div className="panel">
+                <div className="panel members-panel">
                     <h3>Group Feed</h3>
                     {!weeklyStats ? (
                         <p>Loading stats...</p>

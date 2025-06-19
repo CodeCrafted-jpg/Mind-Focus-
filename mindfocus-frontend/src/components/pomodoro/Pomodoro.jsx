@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './pomodoro.css';
 import { studySession } from '../../service/studySession';
+import dingSound from '../../audio/bell.mp3';
 
 const PomodoroTimer = ({
   sessionLength = 25,
@@ -16,19 +17,23 @@ const PomodoroTimer = ({
   const [round, setRound] = useState(1);
 
   const timerRef = useRef(null);
-  const focusTickRef = useRef(0); // Tracks seconds during focus phase
+  const focusTickRef = useRef(0);
 
-  // Sync with parent state (e.g., Focus Mode Start)
+  // 🎵 Play ding
+  const playDing = () => {
+    const audio = new Audio(dingSound);
+    audio.play().catch(console.error);
+  };
+
   useEffect(() => {
     if (parentIsRunning) {
       setIsRunning(true);
     }
   }, [parentIsRunning]);
 
-  // Timer Logic
   useEffect(() => {
     if (isRunning) {
-      timerRef.current = setInterval(async () => {
+      timerRef.current = setInterval(() => {
         setTimeLeft((prev) => {
           if (prev === 1) {
             clearInterval(timerRef.current);
@@ -36,7 +41,6 @@ const PomodoroTimer = ({
             return 0;
           }
 
-          // ⏱️ Count focus time only
           if (!isBreak && sessionId) {
             focusTickRef.current += 1;
             if (focusTickRef.current >= 60) {
@@ -55,35 +59,28 @@ const PomodoroTimer = ({
     return () => clearInterval(timerRef.current);
   }, [isRunning, isBreak, sessionId]);
 
-  // Handle switch between focus ↔ break
   const handlePhaseSwitch = () => {
-    if (isBreak) {
+    playDing(); // 🔔
+
+    if (!isBreak) {
       if (round >= totalRounds) {
-        // ✅ End of all rounds
         setIsRunning(false);
         setIsBreak(false);
         setTimeLeft(0);
         return;
       }
-      // Start new focus round
+
+      setTimeLeft(round % totalRounds === 0 ? longBreak * 60 : shortBreak * 60);
+      setIsBreak(true);
+    } else {
       setIsBreak(false);
       setTimeLeft(sessionLength * 60);
       setRound((prev) => prev + 1);
-    } else {
-      // Start break (short or long)
-      if (round % totalRounds === 0) {
-        setTimeLeft(longBreak * 60);
-      } else {
-        setTimeLeft(shortBreak * 60);
-      }
-      setIsBreak(true);
     }
   };
 
-  // Pause/Resume
   const toggleTimer = () => setIsRunning((prev) => !prev);
 
-  // Reset everything
   const resetTimer = () => {
     clearInterval(timerRef.current);
     setIsRunning(false);

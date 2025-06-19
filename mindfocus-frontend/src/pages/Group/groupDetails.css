@@ -1,22 +1,32 @@
 /* Overall page layout */
 .group-details-page {
     font-family: 'Segoe UI', sans-serif;
-    background-color: #F0FDF4; /* emerald-50 */
-    color: #1F2937; /* gray-800 */
+    background-color: #F0FDF4;
+    /* emerald-50 */
+    color: #1F2937;
+    /* gray-800 */
     min-height: 100vh;
-    padding: 30px;
+    padding: 2rem;
     margin: 0;
+}
+
+@media (max-width: 640px) {
+    .group-details-page {
+        padding: 1rem;
+    }
 }
 
 /* Top navbar */
 .top-navbar {
-    background-color: #10B981; /* emerald-500 */
+    background-color: #10B981;
+    /* emerald-500 */
     color: white;
     padding: 1rem 2rem;
     font-size: 1.25rem;
     font-weight: bold;
     text-align: center;
-    border-bottom: 2px solid #059669; /* emerald-600 */
+    border-bottom: 2px solid #059669;
+    /* emerald-600 */
 }
 
 /* Group header and chart side by side */
@@ -27,6 +37,19 @@
     padding: 2rem;
     gap: 2rem;
     flex-wrap: wrap;
+    flex-direction: row;
+}
+
+@media (max-width: 768px) {
+    .group-header-container {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .group-header,
+    .group-chart {
+        width: 100%;
+    }
 }
 
 /* Group info */
@@ -50,7 +73,8 @@
 
 /* Leave button */
 .btn-red {
-    background-color: #DC2626; /* red-600 */
+    background-color: #DC2626;
+    /* red-600 */
     color: white;
     padding: 0.5rem 1.25rem;
     border: none;
@@ -61,7 +85,8 @@
 }
 
 .btn-red:hover {
-    background-color: #B91C1C; /* red-700 */
+    background-color: #B91C1C;
+    /* red-700 */
 }
 
 /* Pie chart section */
@@ -73,11 +98,11 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     min-width: 300px;
 }
-.group-chart h2{
-color: #DC2626;
-font-size:20px;
-font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
+.group-chart h2 {
+    color: #DC2626;
+    font-size: 1.25rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Three-column layout */
@@ -88,6 +113,19 @@ font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding: 2rem;
 }
 
+@media (max-width: 640px) {
+    .group-content-layout {
+        padding: 1rem;
+        gap: 1.2rem;
+    }
+
+  
+
+    .panel {
+        padding: .5rem;
+    }
+}
+
 /* Panels */
 .panel {
     background-color: white;
@@ -96,6 +134,7 @@ font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
+  
 .panel h3 {
     font-size: 1.25rem;
     margin-bottom: 1rem;
@@ -111,7 +150,8 @@ font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 .feed-list li {
     padding: 0.5rem 0;
-    border-bottom: 1px solid #E5E7EB; /* gray-200 */
+    border-bottom: 1px solid #E5E7EB;
+    /* gray-200 */
     font-size: 0.95rem;
 }
 
