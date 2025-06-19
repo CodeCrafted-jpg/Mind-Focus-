@@ -1,6 +1,7 @@
 import api from "./api.js";
 
-const EXTENSION_ID = 'iaieoincndbeepebgpkgieacgmeiicgo'; 
+const EXTENSION_ID = import.meta.env.VITE_EXTENSION_ID;
+
 
 // Establish and manage the port connection
 let extensionPort = null;
