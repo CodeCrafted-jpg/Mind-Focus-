@@ -85,7 +85,7 @@ const FocusPage = ({ setIsFocusRunning }) => {
         const totalDuration = parseInt(prompt("Total Pomodoro session duration (in minutes):", 60));
 
         if (isNaN(focusTime) || isNaN(shortBreak) || isNaN(longBreak) || isNaN(totalDuration) ||
-            focusTime <= 0 || shortBreak <= 0 || longBreak <= 0 || totalDuration <= 0) {
+          focusTime <= 0 || shortBreak <= 0 || longBreak <= 0 || totalDuration <= 0) {
           alert("All values must be valid positive numbers.");
           return;
         }
@@ -99,7 +99,7 @@ const FocusPage = ({ setIsFocusRunning }) => {
 
         setPomodoroConfig(newConfig);
         config = { isPomodoro: true, customPomodoroConfig: newConfig };
-        
+
         setReadyToRenderPomodoro(true);
       }
 
@@ -121,6 +121,9 @@ const FocusPage = ({ setIsFocusRunning }) => {
       setSessionId(null);
       setIsFocusRunning(false);
       setReadyToRenderPomodoro(false);
+      setTimeout(() => {
+        window.location.reload();
+      }, 4000);
     } catch (err) {
       console.error(err);
     }
