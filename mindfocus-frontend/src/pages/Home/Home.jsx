@@ -1,7 +1,7 @@
 import React from 'react';
 import Headers from '../../components/headers/headers';
 import Features from '../../components/features/features';
-import './home.css'; 
+import './Home.css'; 
 import { Link } from 'react-router-dom';
 
 
