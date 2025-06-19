@@ -1,5 +1,5 @@
 import Group from "../models/Group.js";
-import User from "../models/user.js";
+import User from "../models/User.js";
 import StudySession from "../models/StudySession.js";
 
 //create a group
