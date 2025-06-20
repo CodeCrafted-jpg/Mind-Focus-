@@ -27,13 +27,13 @@ Edit
 - 📊 **Study Tracker:** Track today’s and weekly study time
 - 👥 **Groups:** Collaborative study groups
 - 🧱 **Chrome Extension:** Block distracting websites during focus mode (WIP)
-
+- 🤖 **Ai Assistent:**Chat with ai study companion and get suggestions and help
 ---
 
 ## 🌐 Live Demo
 
-🔗 **Frontend:** _Coming soon_  
-🔗 **Backend (API):** _Coming soon_
+🔗 **App:** [https://mind-focus.vercel.app](https://mind-focus.vercel.app)  
+🛡️ The backend API is private and used internally by the app.
 
 ---
 
