@@ -110,7 +110,7 @@ function GroupDetailsPage() {
                 </div>
 
                 {/* Members Panel */}
-                <div className="panel">
+                <div className="panel members-list-panel">
                     <h3>Members</h3>
                     <ul>
                         {(group.members || []).map((member) => (

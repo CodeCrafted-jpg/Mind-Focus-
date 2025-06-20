@@ -118,7 +118,9 @@
         padding: 1rem;
         gap: 1.2rem;
     }
-
+ .members-list-panel {
+    display: none;
+  }
   
 
     .panel {
