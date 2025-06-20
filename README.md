@@ -27,7 +27,7 @@ Edit
 - 📊 **Study Tracker:** Track today’s and weekly study time
 - 👥 **Groups:** Collaborative study groups
 - 🧱 **Chrome Extension:** Block distracting websites during focus mode (WIP)
-- 🤖 **Ai Assistent:**Chat with ai study companion and get suggestions and help
+- 🤖 **Ai Assistent:** Chat with ai study companion and get suggestions and help
 ---
 
 ## 🌐 Live Demo
